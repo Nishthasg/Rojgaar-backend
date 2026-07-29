@@ -1,0 +1,4 @@
+node_modules
+.env
+//.gitignore file is used to specify intentionally untracked files that Git should ignore. It helps to avoid committing 
+//sensitive information, build artifacts, and other unnecessary files to the repository.
