@@ -7,7 +7,9 @@ const authRoutes = require('./routes/authRoutes');
 const workerRoutes = require('./routes/workerRoutes');
 
 app.use(cors({
-    origin: 'http://localhost:4000',
+    origin: ['http://localhost:4000',
+        'https://rojgaar-one.vercel.app'
+    ],
     credentials: true
 }));
 
