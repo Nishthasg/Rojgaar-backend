@@ -37,6 +37,10 @@ const workerSchema = new mongoose.Schema({
   profileImage: {
     type: String,
     default: ""
+  },
+  bio:{
+    type: String,
+    default: ""
   }
 }, {
     timestamps: true  

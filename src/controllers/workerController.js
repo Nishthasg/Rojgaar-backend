@@ -37,6 +37,7 @@ const createWorkerProfile = async (req, res) => {
         city,
         state,
         hourlyRate,
+        profileImage,
         bio    
     });
     return res.status(201).json({
@@ -199,10 +200,34 @@ const getWorker = async (req, res) =>{
      }
 }
 
+const getWorkerbyId = async (req, res) => {
+    try{
+        const worker = await Worker.findById(req.params.id).populate('user', 'name email phone');
+        if(!worker){
+            return res.status(404).json({
+                success: false,
+                message: "Worker not found."
+            })
+        }
+        return res.status(200).json({
+            success: true,
+            message: "Worker fetched successfully.",
+            data: worker
+        });
+    } catch(error){
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error.",
+            error: error.message
+        });
+    }
+}
+
 module.exports = {
     createWorkerProfile,
     getMyProfile,
     updateWorkerProfile,
     deleteWorkerProfile,
-    getWorker
+    getWorker,
+    getWorkerbyId
 }

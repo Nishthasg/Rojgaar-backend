@@ -5,6 +5,8 @@ const cors = require('cors');
 const indexRoutes = require('./routes/index');
 const authRoutes = require('./routes/authRoutes');
 const workerRoutes = require('./routes/workerRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const locationRoutes = require('./routes/locationRoutes');
 
 app.use(cors({
     origin: ['http://localhost:4000',
@@ -22,5 +24,7 @@ app.use(express.json());
 app.use('/', indexRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/workers', workerRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/locations', locationRoutes);
 
 module.exports = app;
