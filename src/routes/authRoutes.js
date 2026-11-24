@@ -12,7 +12,7 @@ router.get('/admin', protect, authorize('admin'),
  (req,res) => {
     return res.status(200).json({
         success: true,
-        message: 'Welcome Admin !'
+        message:  'Welcome Admin !'
     });
  }
 );
