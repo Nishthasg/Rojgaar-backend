@@ -10,9 +10,9 @@ const locationRoutes = require('./routes/locationRoutes');
 
 app.use(cors({
     origin: [
-        'http://localhost:4000',
-        'http://localhost:4200',
-        'http://127.0.0.1:4200',
+        // 'http://localhost:4000',
+        // 'http://localhost:4200',
+        // 'http://127.0.0.1:4200',
         'https://rojgaar-one.vercel.app'
     ],
     credentials: true
