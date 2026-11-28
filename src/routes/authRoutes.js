@@ -16,5 +16,11 @@ router.get('/admin', protect, authorize('admin'),
     });
  }
 );
+router.post('/forgot-password', authController.forgotPassword);
+// router.post('/reset-password', authController.resetPassword);    
+router.post('/reset-password', (req, res, next) => {
+  console.log('RESET PASSWORD ROUTE HIT');
+  next();
+}, authController.resetPassword);
 
 module.exports = router;
